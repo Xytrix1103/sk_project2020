@@ -1,0 +1,188 @@
+html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+body {
+    font-family: "Candara", "Courier New";
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    background-color: grey;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    width: 15px;
+    background-color: orange;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 15px;
+    background-color: darkorange;
+    border-radius: 10px;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    font-family: "Courier New";                
+    height: 88px;
+}
+
+#logoutButton {
+    border: 0px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: black;
+    color: orange;
+    width: 150px;   
+    height: 60px;
+    line-height: 40px;
+    padding: 10px;
+    margin: 30px;
+}
+
+#logo {
+    margin-left: auto;
+    margin-right: auto;
+    height: 36px;
+    width: auto;
+    z-index: 99;
+    display: block;
+    margin-top: 26px;
+}
+
+#line {
+    position: sticky;
+    top: 88px;
+    z-index: 99;
+    background-color: orange;
+    height: 8px;
+    
+}
+
+#user {
+    width: 50px;
+    height: auto;
+    margin-top: 20px;
+}
+
+#sidebar {
+    width: 20%;
+    height: 100%;
+    background-color: orange;
+    position: fixed;
+    overflow-x: hidden;
+    z-index: 99;
+    min-height: 100vh;
+}
+
+#navigationMenu {
+    margin-top: 40px;
+    text-align: left;
+}
+
+#navigationMenu li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: black;
+}
+
+#navigationMenu a {
+    margin-top: 40px;
+    font-size: 18px;
+    color: black;
+}
+
+.active {
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.container-fluid {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#main-body {    
+    margin-left: 20%;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+}
+
+.container-fluid {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.movieSelection {
+    margin-left: 10px;
+}
+
+#title {
+    background-color: orange;
+    border-radius: 20px;
+    height: 60px;
+    width: 280px;
+    margin-bottom: 30px;
+    vertical-align: middle;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+#title h3 {
+    font-weight: bold;
+    line-height: 50px;
+    width: 280px;
+    text-align: center;
+}
+
+#main {
+    color: white;
+}
+
+.portrait {
+    height: auto;
+    width: 80%;
+    margin: 20px;
+    float: left;
+}
+
+.tempoh {
+    border: 2px solid orange;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: orange;
+    color: black;
+    width: 120px;
+    height: 50px;
+    line-height: 40px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.buyButton {
+    border: 2px solid orange;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    background-color: black;
+    color: orange;
+    width: 150px;
+    height: 50px;
+    line-height: 40px;
+    margin: 20px;
+    display: inline-block;
+}

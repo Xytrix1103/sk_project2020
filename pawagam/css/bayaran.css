@@ -1,0 +1,211 @@
+html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+body {
+    font-family: "Candara", "Courier New";
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    background-color: grey;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    width: 15px;
+    background-color: orange;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 15px;
+    background-color: darkorange;
+    border-radius: 10px;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    font-family: "Courier New";                
+    height: 88px;
+}
+
+#logoutButton {
+    border: 0px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: black;
+    color: orange;
+    width: 150px;   
+    height: 60px;
+    line-height: 40px;
+    padding: 10px;
+    margin: 30px;
+}
+
+#logo {
+    margin-left: auto;
+    margin-right: auto;
+    height: 36px;
+    width: auto;
+    z-index: 99;
+    display: block;
+    margin-top: 26px;
+}
+
+#line {
+    position: sticky;
+    top: 88px;
+    z-index: 99;
+    background-color: orange;
+    height: 8px;
+    
+}
+
+#user {
+    width: 50px;
+    height: auto;
+    margin-top: 20px;
+}
+
+#sidebar {
+    width: 20%;
+    height: 100%;
+    background-color: orange;
+    position: fixed;
+    overflow-x: hidden;
+    z-index: 99;
+    min-height: 100vh;
+}
+
+#navigationMenu {
+    margin-top: 40px;
+    text-align: left;
+}
+
+#navigationMenu li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: black;
+}
+
+#navigationMenu a {
+    margin-top: 40px;
+    font-size: 18px;
+    color: black;
+}
+
+.active {
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.container-fluid {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#main-body {    
+    margin-left: 20%;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    color: white;
+}
+
+.container-fluid {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#bayaran {
+    color: white;
+    margin: 60px;
+    width: 100%;
+    padding: 0px;
+}
+
+.tajuk {
+    width: 100%;
+    height: 6vh;
+    display : flex;
+    align-items : center;
+    margin: 20px auto;
+}
+
+.tajuk > h1 {
+    margin: 0px auto;
+}
+
+.info {
+    width: 100%;
+    height: 6vh;
+    display : flex;
+    align-items : center;
+}
+
+.info > h4 {
+    margin: 0px auto;
+}
+
+#main {
+    color: white;
+    width: 100%;
+}
+
+#main > .row > h2 {
+    margin: 0px auto;
+}
+
+.jadualTiket {
+    width: 70%;
+    font-size: 18px;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.jadualTiket > thead {
+    width: 60%;
+    font-weight: bold;
+    font-size: 22px;
+    border-bottom: 5px solid white;
+}
+
+.jadualTiket > tbody {
+    width: 60%;
+}
+
+.jadualTiket > tbody > tr {
+    border-bottom: 0.5px solid white;
+}
+
+.jadualTiket > tbody > tr > td {
+    padding: 20px;
+}
+
+#idMT {
+    display: block;
+    width: 100%;
+    margin: 30px;
+}
+
+.hantar {
+    background-color: black;
+    color: orange;
+    margin: 40px auto;
+    display: block;
+    height: 50px;
+    border: 2px solid orange;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 40%;
+    font-weight: 600;
+}

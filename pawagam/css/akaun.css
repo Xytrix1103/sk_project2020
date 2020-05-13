@@ -1,0 +1,200 @@
+html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+body {
+    font-family: "Candara", "Courier New";
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    background-color: grey;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    width: 15px;
+    background-color: orange;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 15px;
+    background-color: darkorange;
+    border-radius: 10px;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    font-family: "Courier New";                
+    height: 88px;
+}
+
+#logoutButton {
+    border: 0px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: black;
+    color: orange;
+    width: 150px;   
+    height: 60px;
+    line-height: 40px;
+    padding: 10px;
+    margin: 30px;
+}
+
+#logo {
+    margin-left: auto;
+    margin-right: auto;
+    height: 36px;
+    width: auto;
+    z-index: 99;
+    display: block;
+    margin-top: 26px;
+}
+
+#line {
+    position: sticky;
+    top: 88px;
+    z-index: 99;
+    background-color: orange;
+    height: 8px;
+    
+}
+
+#user {
+    width: 50px;
+    height: auto;
+    margin-top: 20px;
+}
+
+#sidebar {
+    width: 20%;
+    height: 100%;
+    background-color: orange;
+    position: fixed;
+    overflow-x: hidden;
+    z-index: 99;
+    min-height: 100vh;
+}
+
+#navigationMenu {
+    margin-top: 40px;
+    text-align: left;
+}
+
+#navigationMenu li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: black;
+}
+
+#navigationMenu a {
+    margin-top: 40px;
+    font-size: 18px;
+    color: black;
+}
+
+.active {
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.container-fluid {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#main-body {    
+    margin-left: 20%;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+}
+
+#title {
+    background-color: orange;
+    border-radius: 20px;
+    height: 60px;
+    width: 300px;
+    margin-bottom: 30px;
+    vertical-align: middle;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+#title > h3 {
+    font-weight: bold;
+    line-height: 55px;
+    width: 300px;
+    text-align: center;
+}
+
+form {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    height: 100%;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.pendaftaran {
+    background-color: black;
+    color: orange;
+    margin: 8px 0;
+    height: 50px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#update {
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    height: 100%;
+    color: white;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#jenis {
+    text-align-last: center;
+}
+
+.update {
+    background-color: black;
+    color: orange;
+    margin: 8px 0;
+    height: 50px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}

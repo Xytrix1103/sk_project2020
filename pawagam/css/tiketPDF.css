@@ -1,0 +1,63 @@
+#bayaran {
+    color: black;
+    margin: 60px;
+    padding: 0px;
+}
+
+.tajuk {
+    width: 100%;
+    height: 6vh;
+    display : flex;
+    align-items : center;
+    margin: 20px auto;
+}
+
+.tajuk > h1 {
+    margin: 0px auto;
+}
+
+.info {
+    width: 100%;
+    height: 6vh;
+    display : flex;
+    align-items : center;
+}
+
+.info > h4 {
+    margin: 0px auto;
+}
+
+#main {
+    color: black;
+    width: 100%;
+}
+
+#main > .row > h2 {
+    margin: 0px auto;
+}
+
+.jadualTiket {
+    width: 70%;
+    font-size: 18px;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.jadualTiket > thead {
+    width: 60%;
+    font-weight: bold;
+    font-size: 22px;
+    border-bottom: 5px solid black;
+}
+
+.jadualTiket > tbody {
+    width: 60%;
+}
+
+.jadualTiket > tbody > tr {
+    border-bottom: 0.5px solid black;
+}
+
+.jadualTiket > tbody > tr > td {
+    padding: 20px;
+}
