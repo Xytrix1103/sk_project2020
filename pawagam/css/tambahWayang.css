@@ -2,7 +2,6 @@ html {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    min-height: 100vh;
 }
 
 body {
@@ -10,7 +9,6 @@ body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    min-height: 100vh;
 }
 
 ::-webkit-scrollbar {
@@ -67,13 +65,23 @@ body {
     z-index: 99;
     background-color: orange;
     height: 8px;
-    
 }
 
 #user {
     width: 50px;
     height: auto;
     margin-top: 20px;
+}
+
+.tambah {
+    background-color: black;
+    color: orange;
+    margin: 5vh 0;
+    height: 50px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
 }
 
 #sidebar {
@@ -83,7 +91,6 @@ body {
     position: fixed;
     overflow-x: hidden;
     z-index: 99;
-    min-height: 100vh;
 }
 
 #navigationMenu {
@@ -116,105 +123,68 @@ body {
     width: 80%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.91);
-    min-height: 100vh;
     color: white;
 }
 
-
-
-
-.kedudukan {
-    color: white;
-    margin: 20px;
-}
-
-.desc {
-    width: 100%;
-    text-align: center;
-    display: block;
-    margin: 0px auto;
-}
-
-.screen {
-    width: 70%;
-    height: 4vh;
-    color: black;
-    border: 2px solid darkorange;;
-    margin: 2vh auto;
-    text-align: center;
-}
-
-.screen h5 {
-    color: white;
-    width: 100%;
-    line-height: 3vh;
-}
-
-input[type="checkbox"] {
-    display: none;
-}
-
-table {
-    margin: 2vh auto 20px auto;
-}
-
-tr {
-    height: 3vw;
-    margin: 0px;
+#title {
+    background-color: orange;
+    border-radius: 20px;
+    height: 60px;
+    width: 340px;
+    margin-bottom: 30px;
     vertical-align: middle;
+    margin-top: 30px;
+    margin-left: 30px;
 }
 
-td {
-    width: 3vw;
-    height: 3vw;
+#title h3 {
+    font-weight: bold;
+    line-height: 50px;
+    width: 340px;
+    line-height: 60px;
     text-align: center;
-    user-select: none;
+    color: black;
 }
 
-input[type="checkbox"] + label {
-    background-color: darkorange;
-    width: 2.6vw;
-    height: 2.6vw;
-    line-height: 2.5vw;
-    border-radius: 1vw;
-    margin: auto;
-    color: white;
-}
-
-input[type="checkbox"]:checked + label {
-    background-color: green;
-    margin: 5px;
-    width: 2.6vw;
-    height: 2.6vw;
-    line-height: 2.5vw;
-    border-radius: 1vw;
-    margin: auto;
-    color: white;
-}
-
-input[type="checkbox"]:disabled + label {
-    background-color: red !important;
-    margin: 5px;
-    width: 2.6vw;
-    height: 2.6vw;
-    line-height: 2.5vw;
-    border-radius: 1vw;
-    margin: auto;
-    color: white;
-}
-
-.butang {
-    width: 100%;
-}
-
-.hantar {
+input[type=file] {
+    border: 1px solid orange;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
     background-color: black;
     color: orange;
-    margin: 3vh auto;
-    display: block;
+    width: 250px;
     height: 50px;
+    line-height: 40px;
+}
+
+input[type=submit] {
     border: 1px solid orange;
+    font-size: 16px;
+    text-align: center;
     border-radius: 10px;
-    cursor: pointer;
-    width: 40%;
+    background-color: orange;
+    color: black;
+    width: 150px;
+    height: 60px;
+    line-height: 50px;
+    margin-top: 20px;
+    margin-bottom: 60px; 
+    margin-left: 50px;   
+}
+
+form {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    height: 100%;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }

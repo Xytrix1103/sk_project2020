@@ -1,7 +1,16 @@
 <?php
 
-    include ("./includes/mula.php");
+    //Mulakan sesi
 
+    session_start();
+
+    //Memastikan pengguna telah login sebelum mengakses laman ini
+
+    if(!isset($_SESSION['pengguna'])) {
+        header("Location: logMasuk.php");
+        die();
+    }
+    
     //Memastikan hanya pengguna yang merupakan pengurus yang dapat mengakses laman ini
 
     include ("./includes/pengurusValidation.php");
@@ -17,8 +26,9 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <meta name="viewport" content="width = device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/pilihanPendaftaran.css">
-        <title>Cinema HSY</title>
+        <link rel="stylesheet" href="./css/tambahWayang.css">
+
+        <title>Cinema HSY - Tambah Wayang</title>
 
     </head>
 
@@ -56,12 +66,12 @@
                             <li><a href="lamanUtama.php" class="">Menu Utama</a></li>
                             <li><a href="akaun.php" class="">Akaun Saya</a></li>
                             <li><a href="penempahan.php" class="">Penempahan Tiket</a></li>
-                            <li><a href="pilihanPendaftaran.php" class="active">Pendaftaran Pengguna Baru</li>   
+                            <li><a href="pilihanPendaftaran.php" class="">Pendaftaran Pengguna Baru</li>   
                             <ul>
                                 <li><a href="pendaftaran.php" class="">Masukkan Data</li>
                                 <li><a href="muatnaikCSV.php" class="">Muat Naik Fail CSV</li>
                             </ul>
-                            <li><a href="tambahWayang.php" class="">Tambah Wayang</a></li>
+                            <li><a href="tambahWayang.php" class="active">Tambah Wayang</a></li>
                             <li><a href="tambahMT.php" class="">Tambah Masa Tayangan</a></li>
                             <li><a href="pengguna.php" class="">Jadual Pengguna</a></li>
                             <li><a href="jualan.php" class="">Rekod Jualan</a></li>
@@ -74,13 +84,39 @@
 
                 </div> 
 
-                <div id="main-body" style="width:80%">
+                <div id="main-body" style="width:80%">  
 
-                    <h4>Untuk Memasukkan Data Pengguna Baru Secara Manual, Sila Tekan Butang di Bawah.</h4></br>
-                    <a role="button" class="selection" href="pendaftaran.php">Pendaftaran Secara Manual</a>
+                    <div class="container" id="pendaftaran">
 
-                    <h4>Untuk Memuat Naik Data Pengguna dalam Fail CSV, Sila Tekan Butang di Bawah.</h4></br>
-                    <a role="button" class="selection" href="muatnaikCSV.php">Muat Naik Fail CSV</a>
+                        <div class="row" id="title">
+
+                            <h3> Tambah Wayang </h3>
+
+                        </div>
+
+                        <form action="tambahWayangValidation.php" method="POST" enctype="multipart/form-data">
+
+                            <div class="container">
+
+                                <label for="namaWayang" style="margin-bottom:10px;"><b>Nama Wayang</b></label>
+                                <input style="margin-bottom:20px;" type="text" placeholder="Sila masukkan nama wayang" name="namaWayang" required>
+
+                                <label for="infoWayang" style="margin-bottom:10px;"><b>Info Wayang</b></label>
+                                <input style="margin-bottom:20px;" type="text" placeholder="Sila masukkan sinopsis atau info wayang" name="infoWayang" required>
+                            
+                                <label for="tempohWayang" style="margin-bottom:10px;"><b>Tempoh Wayang (minit)</b></label></br>
+                                <input style="margin-bottom:20px;" type="number" name="tempohWayang" required></br>
+
+                                <label for="imej" style="margin-bottom:10px;"><b>Imej Wayang (Potret)</b></label></br>
+                                <input type="file" name="imej" id="imej">
+                                    
+                                <button class="tambah" type="submit" style="font-size:20px;" name="submit" value="submit">Tambah</button>
+
+                            </div>
+
+                        </form>
+                        
+                    </div>
 
                 </div>
 
@@ -91,4 +127,3 @@
     </body>
 
 </html>
-        

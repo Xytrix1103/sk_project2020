@@ -109,21 +109,17 @@ body {
     border-radius: 10px;
 }
 
-.container-fluid {
-    background-color: rgba(0, 0, 0, 0.7);
-}
+
 
 #main-body {    
     margin-left: 20%;
     width: 80%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.91);
     min-height: 100vh;
 }
 
-.container-fluid {
-    background-color: rgba(0, 0, 0, 0.7);
-}
+
 
 .movieSelection {
     margin-left: 10px;
@@ -136,7 +132,7 @@ body {
     width: 280px;
     margin-bottom: 30px;
     vertical-align: middle;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 30px;
 }
 

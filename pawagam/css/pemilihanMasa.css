@@ -109,26 +109,19 @@ body {
     border-radius: 10px;
 }
 
-.container-fluid {
-    background-color: rgba(0, 0, 0, 0.7);
-}
+
 
 #main-body {    
     margin-left: 20%;
     width: 80%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.91);
     min-height: 100vh;
-    color: white;
 }
 
-.container-fluid {
-    background-color: rgba(0, 0, 0, 0.7);
-}
+
 
 .pilihMasa {
-    height: 25vw;
-    width: 80vw;
     color: white;
     margin: 20px;
 }
@@ -157,7 +150,7 @@ body {
 
 .portrait {
     width: auto;
-    height: 20vw;
+    height: 15vw;
     margin: 20px;
     display: inline-block;
 }
@@ -176,7 +169,7 @@ form {
 }
 
 .masaMT {
-    margin: 20px;
+    margin:  20px;
 }
 
 .tarikh {

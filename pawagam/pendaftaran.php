@@ -1,25 +1,10 @@
 <?php
 
-    //Mulakan sesi
-
-    session_start();
-
-    //Memastikan pengguna telah login sebelum mengakses laman ini
-
-    if(!isset($_SESSION['pengguna'])) {
-        header("Location: logMasuk.php");
-        die();
-    }
+    include ("./includes/mula.php");
     
     //Memastikan hanya pengguna yang merupakan pengurus yang dapat mengakses laman ini
 
-    if($_SESSION['jenis'] != 'pengurus') {
-        echo ("<SCRIPT LANGUAGE='JavaScript'>
-        window.alert('Anda tidak dibenarkan mengakses laman ini. Sila menghubungi pengurus anda untuk maklumat lanjut.')
-        window.location.href='./lamanUtama.php';
-        </SCRIPT>");
-    }
-
+    include ("./includes/pengurusValidation.php");
 
 ?>
 
@@ -77,6 +62,8 @@
                                 <li><a href="pendaftaran.php" class="active">Masukkan Data</li>
                                 <li><a href="muatnaikCSV.php" class="">Muat Naik Fail CSV</li>
                             </ul>
+                            <li><a href="tambahWayang.php" class="">Tambah Wayang</a></li>
+                            <li><a href="tambahMT.php" class="">Tambah Masa Tayangan</a></li>
                             <li><a href="pengguna.php" class="">Jadual Pengguna</a></li>
                             <li><a href="jualan.php" class="">Rekod Jualan</a></li>
                             
@@ -118,7 +105,7 @@
                                 <input style="margin-bottom:20px;" type="text" placeholder="Sila masukkan telefon pengguna baru" name="telefonPenggunaBaru" required>
 
                                 <label for="jenisPenggunaBaru" style="margin-bottom:10px;"><b>Jenis Pengguna Baru</b></label></br>
-                                <select id="jenisPenggunaBaru" name="jenisPenggunaBaru" style="margin-bottom:20px;height:50px;width:170px;text-align:center;" required>
+                                <select id="jenisPenggunaBaru" name="jenisPenggunaBaru" required>
                                     
                                     <option value="pekerja"> Pekerja </option>
                                     <option value="pengurus"> Pengurus </option>

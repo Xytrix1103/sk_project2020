@@ -2,154 +2,161 @@
 
     // //Mulakan sesi
 
-    // session_start();
+    session_start();
 
-    // //Mendapatkan nilai laman sebelumnya dengan cara POST
+    //Menentukan zon masa dan tarikh kini
 
-    // global $idMT;
-    // $idMT = $_POST['idMT'];
+    date_default_timezone_set("Asia/Kuala_Lumpur");
+    $tarikh = date('Y-m-d');
 
-    // global $id;
-    // $id = $_SESSION['pengguna'];
+    //Mendapatkan nilai laman sebelumnya dengan cara POST
 
-    // global $seat;
-    // $seat = explode(", ", $_POST['seat']);
-    // $harga = $_POST['jualan'];
+    global $idMT;
+    $idMT = $_POST['idMT'];
 
-    // //Mewujudkan hubungan dengan pangkalan data 'pawagam'
+    global $id;
+    $id = $_SESSION['pengguna'];
 
-    // $namaPelayan = "localhost";
-    // $nama_pengguna = "root";
-    // $kataLaluan = "";
-    // $namaPD = "pawagam";
+    global $seat;
+    $seat = explode(", ", $_POST['seat']);
+    $harga = $_POST['jualan'];
 
-    // $hubungan = new mysqli($namaPelayan, $nama_pengguna, $kataLaluan, $namaPD);
+    //Mewujudkan hubungan dengan pangkalan data 'pawagam'
+
+    $namaPelayan = "localhost";
+    $nama_pengguna = "root";
+    $kataLaluan = "";
+    $namaPD = "pawagam";
+
+    $hubungan = new mysqli($namaPelayan, $nama_pengguna, $kataLaluan, $namaPD);
     
-    // //Menguji hubungan
+    //Menguji hubungan
 
-    // if ($hubungan->connect_error) {
-    //     die("Connection failed: " . $hubungan->connect_error);
-    // }
+    if ($hubungan->connect_error) {
+        die("Connection failed: " . $hubungan->connect_error);
+    }
 
-    // //Menentukan query iaitu mendapatkan nilai 'AUTO_INCREMENT' untuk jadual 'tiket'
+    //Menentukan query iaitu mendapatkan nilai 'AUTO_INCREMENT' untuk jadual 'tiket'
 
-    // $sql = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'pawagam' AND TABLE_NAME = 'tiket'";
+    $sql = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'pawagam' AND TABLE_NAME = 'tiket'";
     
-    // //Menjalankan query
+    //Menjalankan query
 
-    // $keputusan = $hubungan->query($sql);
+    $keputusan = $hubungan->query($sql);
 
-    // //Masukkan data ke dalam tatasusunan 'data' jika query berjaya dilakukan
+    //Masukkan data ke dalam tatasusunan 'data' jika query berjaya dilakukan
 
-    // if ($keputusan == true) {
+    if ($keputusan == true) {
 
-    //     $data = [];
+        $data = [];
 
-    //     while ($baris = $keputusan->fetch_assoc()) {
+        while ($baris = $keputusan->fetch_assoc()) {
 
-    //         array_push($data, $baris);
+            array_push($data, $baris);
 
-    //     }
+        }
 
-    //     unset($keputusan);
+        unset($keputusan);
 
-    // }
+    }
 
-    // $idTiket = $data[0]['AUTO_INCREMENT'];
+    $idTiket = $data[0]['AUTO_INCREMENT'];
 
-    // //Menentukan query iaitu memasukkan maklumat ka dalam jadual 'tiket'
+    //Menentukan query iaitu memasukkan maklumat ka dalam jadual 'tiket'
 
-    // $sql = "INSERT INTO tiket(idTiket, idPengguna, idMT, jualanTiket) VALUES ('$idTiket', '$id', '$idMT', '$harga')";
 
-    // //Menjalankan query
 
-    // $keputusan = $hubungan->query($sql);
+    $sql = "INSERT INTO tiket(idTiket, idPengguna, idMT, tarikhJualan, jualanTiket) VALUES ('$idTiket', '$id', '$idMT', '$tarikh', '$harga')";
 
-    // //Menentukan sama ada query telah berjaya dilakukan
+    //Menjalankan query
 
-    // if ($keputusan == TRUE){
+    $keputusan = $hubungan->query($sql);
 
-    //     $pass = true;
+    //Menentukan sama ada query telah berjaya dilakukan
 
-    // } else {
+    if ($keputusan == TRUE){
 
-    //     echo "Error" . $sql . "<br>" . $hubungan->error;
+        $pass = true;
 
-    // }
+    } else {
 
-    // if ($pass == true) {
+        echo "Error" . $sql . "<br>" . $hubungan->error;
 
-    //     unset($keputusan);
-    //     unset($pass);
+    }
 
-    // }
+    if ($pass == true) {
 
-    // //Menentukan query iaitu mendapatkan nilai 'AUTO_INCREMENT' untuk jadual 'tempat_duduk'
+        unset($keputusan);
+        unset($pass);
 
-    // $sql = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'pawagam' AND TABLE_NAME = 'tempat_duduk'";
+    }
 
-    // //Menjalankan query
+    //Menentukan query iaitu mendapatkan nilai 'AUTO_INCREMENT' untuk jadual 'tempat_duduk'
 
-    // $keputusan = $hubungan->query($sql);
+    $sql = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'pawagam' AND TABLE_NAME = 'tempat_duduk'";
 
-    // //Masukkan data ke dalam tatasusunan global 'dataTD' jika query berjaya dilakukan
+    //Menjalankan query
 
-    // if ($keputusan == true) {
+    $keputusan = $hubungan->query($sql);
 
-    //     $dataTD = [];
+    //Masukkan data ke dalam tatasusunan global 'dataTD' jika query berjaya dilakukan
 
-    //     while ($baris = $keputusan->fetch_assoc()) {
+    if ($keputusan == true) {
 
-    //         array_push($dataTD, $baris);
+        $dataTD = [];
 
-    //     }
+        while ($baris = $keputusan->fetch_assoc()) {
 
-    //     unset($keputusan);
+            array_push($dataTD, $baris);
 
-    // }
+        }
 
-    // $idTD = $dataTD[0]['AUTO_INCREMENT'];
+        unset($keputusan);
 
-    // for ($x = 0; $x < count($seat); $x ++) {
+    }
 
-    //     $TD = $seat[$x];
+    $idTD = $dataTD[0]['AUTO_INCREMENT'];
 
-    //     //Menentukan query iaitu memasukkan maklumat ke dalam jadual 'tempat_duduk'
+    for ($x = 0; $x < count($seat); $x ++) {
 
-    //     $sql = "INSERT INTO tempat_duduk(idTD, kedudukanTD, idTiket) VALUES ('$idTD', '$TD', '$idTiket')";
+        $TD = $seat[$x];
 
-    //     //Menjalankan query
+        //Menentukan query iaitu memasukkan maklumat ke dalam jadual 'tempat_duduk'
 
-    //     $keputusan = $hubungan->query($sql);
+        $sql = "INSERT INTO tempat_duduk(idTD, kedudukanTD, idTiket) VALUES ('$idTD', '$TD', '$idTiket')";
 
-    //     //Menentukan sama ada query berjaya dilakukan
+        //Menjalankan query
 
-    //     if ($keputusan == true) {
+        $keputusan = $hubungan->query($sql);
 
-    //         $pass = true;
+        //Menentukan sama ada query berjaya dilakukan
 
-    //     } else {
+        if ($keputusan == true) {
+
+            $pass = true;
+
+        } else {
             
-    //         $pass = false;
+            $pass = false;
 
-    //     }
+        }
 
-    //     $idTD += 1;
-    //     unset($keputusan);
+        $idTD += 1;
+        unset($keputusan);
 
-    //     if($pass == false) {
+        if($pass == false) {
 
-    //         $final = false;
-    //         echo "Error" . $sql . "<br>" . $hubungan->error;
-    //         break;     
+            $final = false;
+            echo "Error" . $sql . "<br>" . $hubungan->error;
+            break;     
 
-    //     }
+        }
 
-    // }
+    }
 
-    // //Menamatkan hubungan
+    //Menamatkan hubungan
 
-    // $hubungan->close();
+    $hubungan->close();
 
 
 ?>
@@ -165,24 +172,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/tiketPDF.css">
 
-        <title>Printable PDF</title>
+        <title>Loading</title>
 
     </head>
 
-    <body>
+    <script>
 
         <?php
 
-            echo $_POST['cetak'];
+            $_SESSION['cetak'] = $_POST['cetak'];
 
         ?>
 
-    </body>
-
-    <script>
-
-        window.print();
-        window.location.href = 'http://localhost/lamanUtama.php';
+        window.open('http://localhost/pawagam/tiketPDF.php');
+        window.location.replace("http://localhost/pawagam/lamanUtama.php")
 
     </script>
 

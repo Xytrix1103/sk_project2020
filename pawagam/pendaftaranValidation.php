@@ -1,24 +1,10 @@
 <?php
 
-    //Mulakan sesi
-
-    session_start();
-
-    //Memastikan pengguna telah login sebelum mengakses laman ini
-
-    if(!isset($_SESSION['pengguna'])) {
-        header("Location: login.php");
-        die();
-    }
+    include ("./includes/mula.php");
 
     //Memastikan hanya pengguna yang merupakan pengurus serta maklumat dari laman tertentu yang dapat mengakses laman ini
 
-    if($_SESSION['jenis'] != 'pengurus') {
-        echo ("<SCRIPT LANGUAGE='JavaScript'>
-        window.alert('Anda tidak dibenarkan mengakses laman ini. Sila menghubungi pengurus anda untuk maklumat lanjut.')
-        window.location.href='./lamanUtama.php';
-        </SCRIPT>");
-    }
+    include ("./includes/pengurusValidation.php");
 
     //Mewujudkan hubungan dengan pangkalan data 'pawagam'
 

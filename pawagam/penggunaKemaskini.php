@@ -1,24 +1,10 @@
 <?php 
 
-    //Mulakan sesi
-
-    session_start();
-
-    //Memastikan pengguna telah login sebelum mengakses laman ini
-
-    if(!isset($_SESSION['pengguna'])) {
-        header("Location: login.php");
-        die();
-    }
+    include ("./includes/mula.php");
     
     //Memastikan hanya pengguna yang merupakan pengurus yang dapat mengakses laman ini
 
-    if($_SESSION['jenis'] != 'pengurus') {
-        echo ("<SCRIPT LANGUAGE='JavaScript'>
-        window.alert('Anda tidak dibenarkan mengakses laman ini. Sila menghubungi pengurus anda untuk maklumat lanjut.')
-        window.location.href='./lamanUtama.php';
-        </SCRIPT>");
-    }
+    include ("./includes/pengurusValidation.php");
 
     //Mewujudkan hubungan dengan pangkalan data 'pawagam'
 
@@ -123,6 +109,8 @@
                                 <li><a href="pendaftaran.php" class="">Masukkan Data</li>
                                 <li><a href="muatnaikCSV.php" class="">Muat Naik Fail CSV</li>
                             </ul>
+                            <li><a href="tambahWayang.php" class="">Tambah Wayang</a></li>
+                            <li><a href="tambahMT.php" class="">Tambah Masa Tayangan</a></li>
                             <li><a href="pengguna.php" class="active">Jadual Pengguna</a></li>
                             <li><a href="jualan.php" class="">Rekod Jualan</a></li>
                             
@@ -140,7 +128,7 @@
 
                         <div class="row" id="title">
 
-                            <h3> Jadual Pengguna </h3>   
+                            <h3> Kemaskini </h3>   
 
                         </div>
 

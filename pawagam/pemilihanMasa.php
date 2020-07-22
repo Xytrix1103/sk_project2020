@@ -1,17 +1,8 @@
 <?php 
 
-    //Mulakan sesi
+    include ("./includes/mula.php");
 
-    session_start();
-
-    //Memastikan pengguna telah login sebelum mengakses laman ini
-
-    if(!isset($_SESSION['pengguna'])) {
-        header("Location: logMasuk.php");
-        die();
-    }
-
-    include('penempahanQuery.php');
+    include ("./includes/penempahanQuery.php");
 
     //Mengisytiharkan pembolehubah global 'wayang' dan nilainya merupakan nilai 'wayang' melalui cara POST dari borang sebelumnya
 
@@ -119,6 +110,8 @@
                                                 <li><a href="pendaftaran.php" class="">Masukkan Data</li>
                                                 <li><a href="muatnaikCSV.php" class="">Muat Naik Fail CSV</li>
                                             </ul>
+                                            <li><a href="tambahWayang.php" class="">Tambah Wayang</a></li>
+                                            <li><a href="tambahMT.php" class="">Tambah Masa Tayangan</a></li>
                                             <li><a href="pengguna.php" class="">Jadual Pengguna</a></li>
                                             <li><a href="jualan.php" class="">Rekod Jualan</a></li>'; 
 
@@ -136,7 +129,7 @@
 
                 <div id="main-body" style="width:80%">
 
-                    <div class="container" id="tiket">
+                    <div class="container">
 
                         <div class="row" id="title">
 
@@ -148,13 +141,13 @@
 
                             <div class="row pilihMasa">
 
-                                <div id="imej">
+                                <div id="imej" style="width:20%;">
 
                                     <img class="portrait" src="./img/<?php echo $urlGambar; ?>">
 
                                 </div>
 
-                                <div id="maklumat" style="width:55vw;">
+                                <div id="maklumat" style="width:80%;">
 
                                     <h4 class="namaWayang" style="margin:20px;font-weight:lighter;"><span style="font-weight:bold;font-size:45px;margin-right: 20px;"><?php echo $namaWayang . "</span>" . $tempohWayang . " minit"; ?></h4>
                                     <h5 style="margin:40px 20px;font-weight:lighter;"><?php echo $infoWayang; ?></h5>

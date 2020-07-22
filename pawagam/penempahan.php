@@ -1,21 +1,12 @@
 <?php 
 
-    include('penempahanQuery.php');
+    include ("./includes/penempahanQuery.php");
 
     //Memanggil fungsi 'wayang'
 
     wayang();
 
-    //Mulakan sesi
-
-    session_start();
-
-    //Memastikan pengguna telah login sebelum mengakses laman ini
-
-    if(!isset($_SESSION['pengguna'])) {
-        header("Location: logMasuk.php");
-        die();
-    }
+    include ("./includes/mula.php");
 
 ?>
 
@@ -85,6 +76,8 @@
                                                 <li><a href="pendaftaran.php" class="">Masukkan Data</li>
                                                 <li><a href="muatnaikCSV.php" class="">Muat Naik Fail CSV</li>
                                             </ul>
+                                            <li><a href="tambahWayang.php" class="">Tambah Wayang</a></li>
+                                            <li><a href="tambahMT.php" class="">Tambah Masa Tayangan</a></li>
                                             <li><a href="pengguna.php" class="">Jadual Pengguna</a></li>
                                             <li><a href="jualan.php" class="">Rekod Jualan</a></li>'; 
 

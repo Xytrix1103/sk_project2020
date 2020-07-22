@@ -1,15 +1,6 @@
 <?php 
 
-    //Mulakan sesi
-
-    session_start();
-
-    //Memastikan pengguna telah login sebelum mengakses laman ini
-
-    if(!isset($_SESSION['pengguna'])) {
-        header("Location: login.php");
-        die();
-    }
+    include ("./includes/mula.php");
 
     //Menerima nilai melalui cara POST
 
@@ -31,7 +22,7 @@
     global $tarikh;
     $tarikh = $_POST['tarikh'];
 
-    include 'penempahanQuery.php';
+    include ("./includes/penempahanQuery.php");
 
     //Memanggil fungsi 'wayang'
 
@@ -107,23 +98,20 @@
 
                                     echo '  <li><a href="lamanUtama.php" class="">Menu Utama</a></li>
                                             <li><a href="akaun.php" class="">Akaun Saya</a></li>
-                                            <li><a href="penempahan.php" class="active">Penempahan Tiket</a></li>
-                                            <li><a href="pilihanPendaftaran.php" class="">Pendaftaran Pengguna Baru</li>   
-                                            <ul>
-                                                <li><a href="pendaftaran.php" class="">Masukkan Data</li>
-                                                <li><a href="muatnaikCSV.php" class="">Muat Naik Fail CSV</li>
-                                            </ul>';
+                                            <li><a href="penempahan.php" class="active">Penempahan Tiket</a></li>';
 
                                 } else {
 
                                     echo '  <li><a href="lamanUtama.php" class="">Menu Utama</a></li>
                                             <li><a href="akaun.php" class="">Akaun Saya</a></li>
                                             <li><a href="penempahan.php" class="active">Penempahan Tiket</a></li>
-                                            <li><a href="pilihanPendaftaran.php" class="">Pendaftaran Pengguna Baru</li>   
+                                            <li><a href="pilihanPendaftaran.php" class="">Pendaftaran Pengguna </li>   
                                             <ul>
                                                 <li><a href="pendaftaran.php" class="">Masukkan Data</li>
                                                 <li><a href="muatnaikCSV.php" class="">Muat Naik Fail CSV</li>
                                             </ul>
+                                            <li><a href="tambahWayang.php" class="">Tambah Wayang</a></li>
+                                            <li><a href="tambahMT.php" class="">Tambah Masa Tayangan</a></li>
                                             <li><a href="pengguna.php" class="">Jadual Pengguna</a></li>
                                             <li><a href="jualan.php" class="">Rekod Jualan</a></li>'; 
 
